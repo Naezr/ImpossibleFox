@@ -1,2 +1,3 @@
 # ImpossibleFox
-Very cool theme for firefox
+
+If you don't understand what it says, use a translator.
