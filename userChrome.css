@@ -1,0 +1,200 @@
+/* hype */
+
+
+
+
+
+
+
+/* HIDE ELEMENTS */
+.tab-close-button, 
+#reader-mode-button, 
+#alltabs-button, 
+#page-action-buttons, /* add to bookmarks and PiP buttons in urlbar */
+#PlacesChevron, /* bookmarks overflow buttom */
+.tab-label-container[pinned], /* pinned tab label */
+#identity-box, /* icon of browser's own tabs like settings */
+#tracking-protection-icon-container /* security bullshit buttons */
+{ display: none !important }
+
+
+
+/* TABS */
+
+/* multiline tabs */
+scrollbox[part][orient="horizontal"] { 
+  display: flex; 
+  flex-wrap: wrap !important; 
+  height: none !important; 
+}
+
+/* inactive tab */
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) { 
+  max-width: 200px !important; 
+  min-width: 130px !important; 
+}
+
+/* active tab */
+.tabbrowser-tab[fadein][selected]:not([pinned]) { 
+  max-width: 310px !important; 
+  min-width: 310px !important; 
+}
+
+/* pinned tab */
+.tabbrowser-tab[fadein][pinned] { /* pinned tab */
+  max-width: 40px !important; 
+  min-width: 40px !important; 
+  #urlbar { z-index: -1 !important; opacity: 0 !important }
+}
+
+/* tab close button on hover */
+tab:not([pinned]):hover .tab-close-button { display: flex !important }
+tab[selected]:not([pinned]) .tab-close-button { display: flex !important }
+
+/* urlbar in selected tab on hover style */
+.tab-label-container { opacity: 1 }
+#urlbar { opacity: 0; }
+#urlbar-background{ opacity: 0; outline: none !important }
+
+tab[selected]:hover { 
+  #urlbar {opacity: 1}; 
+  .tab-label-container{ opacity: 0 !important; }; 
+}
+
+#urlbar[focused] { 
+  opacity: 1; 
+  #urlbar-background{ opacity: 1 };
+  .tab-close-button{ display: flex };
+}
+
+#urlbar { 
+  min-height: 35px !important; 
+  max-width: 281px; 
+  padding-left: 29px !important; 
+  clip: rect( auto, auto, auto, 28px ); 
+}
+
+
+
+/* BOOKMARKS */
+
+/* multiline bookmarks */
+:root[BookmarksToolbarOverlapsBrowser] :where(#PersonalToolbar) {
+  height: unset !important;
+}
+#PersonalToolbar {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-height: none !important;
+}
+#PlacesToolbarItems {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 6px;
+}
+
+/* cool backround on bookmarks */
+#PlacesToolbarItems > .bookmark-item {
+  background: #77777730 !important;
+  height: 24px; 
+} 
+
+
+
+/* CENTERED TABS AND BOOKMARKS */
+#tabbrowser-arrowscrollbox:not([overflowing]){
+ --uc-flex-justify: center; 
+}
+#PlacesToolbarItems:not([overflowing]){
+ --uc-flex-justify: center; 
+}
+scrollbox[orient="horizontal"]{
+  justify-content: var(--uc-flex-justify,initial);
+}
+
+
+
+/* SOME OTHER STUFF */
+
+/* swap toolbars positions */
+#titlebar { order: 0 !important; }
+#nav-bar { order: 3 !important; border-top-width: 0px !important; }
+#PersonalToolbar { order: 2 !important; }
+#TabsToolbar { order: 1 !important; }
+
+/* hide empty adressbar */
+:root[sessionrestored]:not([inFullscreen]) > body > #browser{ margin-top: -44px }
+
+/* thin menubar */
+#toolbar-menubar {max-height: 5px !important }
+
+/* small scrollbars in ui */
+.panel-subview-body,
+#permList,
+scrollbar{
+ color: inherit;
+ scrollbar-color: currentColor transparent;
+ scrollbar-width: thin 
+}
+
+/* fix sites without favicon */
+.tab-icon-stack { min-width: 21.5px };
+
+
+
+/* THAT THING IN THE LOWER LEFT CORNER WHEN YOU HOVER OVER THE LINK */
+#statuspanel #statuspanel-label {
+  font-weight: 600 !important;
+  padding-inline: 6px !important;
+  border-radius: 6px !important;
+  margin: 8px !important;
+  background-color: white !important;
+  color: black !important;
+}
+
+
+
+/* ICONIZED MENU */
+#appMenu-zoom-controls::before,
+#appMenu-fxa-status2[fxastatus] > toolbarbutton::before,
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton > image{
+  fill: currentColor;
+  -moz-context-properties: fill;
+  margin-inline: 0 8px !important;
+}
+#appMenu-zoom-controls::before,
+#appMenu-fxa-status2[fxastatus] > toolbarbutton::before{
+  display: flex;
+  content: "";
+  width: 16px;
+  height: 16px;
+}
+#appMenu-new-tab-button2{ list-style-image: url("chrome://browser/skin/new-tab.svg") }
+#appMenu-new-window-button2{ list-style-image: url("chrome://browser/skin/window.svg") }
+#appMenu-new-private-window-button2{ list-style-image: url("chrome://browser/skin/privateBrowsing.svg") }
+#appMenu-bookmarks-button{ list-style-image: url("chrome://browser/skin/bookmark-star-on-tray.svg") }
+#appMenu-history-button{ list-style-image: url("chrome://browser/skin/history.svg") }
+#appMenu-downloads-button{ list-style-image: url("chrome://browser/skin/downloads/downloads.svg") }
+#appMenu-passwords-button{ list-style-image: url("chrome://browser/skin/login.svg") }
+#appMenu-extensions-themes-button{ list-style-image: url("chrome://mozapps/skin/extensions/extension.svg") }
+#appMenu-print-button2{ list-style-image: url("chrome://global/skin/icons/print.svg") }
+#appMenu-save-file-button2{ list-style-image: url("chrome://browser/skin/save.svg") }
+#appMenu-find-button2{ list-style-image: url("chrome://global/skin/icons/search-glass.svg") }
+#appMenu-settings-button{ list-style-image: url("chrome://global/skin/icons/settings.svg") }
+#appMenu-more-button2{ list-style-image: url("chrome://global/skin/icons/developer.svg") }
+#appMenu-help-button2{ list-style-image: url("chrome://global/skin/icons/info.svg") }
+#appMenu-quit-button2{ list-style-image: url("chrome://devtools/skin/images/search-clear.svg") }
+#appMenu-translate-button{ list-style-image: url("chrome://browser/skin/translations.svg") }
+#appMenu-zoom-controls::before{ background-image: url("chrome://browser/skin/fullscreen.svg") }
+/* Use account-button icon for signed in sync item */
+#appMenu-fxa-status2[fxastatus] > toolbarbutton::before{ background-image: var(--avatar-image-url) }
+/* Add somewhat hacky separator to zoom controls so it looks consistent */
+#appMenu-protonMainView > .panel-subview-body::after{
+  content: "";
+  display: flex;
+  border-bottom: 1px solid var(--panel-separator-color);
+  margin: var(--panel-separator-margin);
+}
+#appMenu-find-button2 ~ *{
+  order: 2;
+}
