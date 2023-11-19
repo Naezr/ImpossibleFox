@@ -1,12 +1,12 @@
 # ImpossibleFox
 
-### If you don't understand what it says, use a translator. I will try to make a description in English as soon as possible.
+*If you don't understand what it says, use a translator. I will try to make a description in English as soon as possible.*
 
 --------
 
-###### Описание будет дополняться и изменяться ещё много раз
+Описание будет дополняться и изменяться ещё много раз
 
-## Простая и быстрая однострочная тема в ванильной стилистике Firefox, максимально приближенная к так называемому "компактому режиму" браузера Safari
+**Простая и быстрая однострочная тема в ванильной стилистике Firefox, максимально приближенная к так называемому "компактому режиму" браузера Safari**
 
 ![wordart](https://github.com/Naezr/ImpossibleFox/assets/95460152/41d28042-f758-464f-9493-6fc1d04a0a98)
 
