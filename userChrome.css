@@ -124,6 +124,13 @@ scrollbox[orient="horizontal"]{
 
 /* hide empty adressbar */
 :root[sessionrestored]:not([inFullscreen]) > body > #browser{ margin-top: -44px }
+#nav-bar {z-index: -1 !important }
+
+/* unlimited sidebar width */
+#sidebar-box { max-width: none !important }
+
+/* scripted buttons fix */
+#unified-extensions-button, #PanelUI-menu-button { margin-bottom: 4px !important }
 
 /* thin menubar */
 #toolbar-menubar {max-height: 5px !important }
