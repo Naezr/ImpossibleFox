@@ -3,15 +3,15 @@
         let toolbar = document.getElementById("TabsToolbar");
         let back = document.getElementById("back-button");
         let fwd = document.getElementById("forward-button");
-		let menub = document.getElementById("PanelUI-menu-button");
-		let ext = document.getElementById("unified-extensions-button");
-		let tabstlbr = document.getElementById("tabbrowser-tabs");
-		let dwnlds = document.getElementById("downloads-button")
+	let menub = document.getElementById("PanelUI-menu-button");
+	let ext = document.getElementById("unified-extensions-button");
+	let tabstlbr = document.getElementById("tabbrowser-tabs");
+	let dwnlds = document.getElementById("downloads-button");
         toolbar._customizationTarget.prepend(back);
         back.after(fwd);
-		tabstlbr.after(dwnlds);
-		dwnlds.after(ext);
-		ext.after(menub);
+	tabstlbr.after(dwnlds);
+	dwnlds.after(ext);
+	ext.after(menub);
     }
     if (gBrowserInit.delayedStartupFinished) init();
     else {
