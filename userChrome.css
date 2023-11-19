@@ -144,6 +144,14 @@ scrollbar{
  scrollbar-width: thin 
 }
 
+/* fix very long buttons */
+.titlebar-buttonbox-container {max-height: 45px}
+.toolbarbutton-1 {max-height: 45px}
+.titlebar-spacer {max-width: 0px}
+
+/* fix urlbar height */
+#nav-bar {min-height: 44px !important; max-height: 44px !important}
+
 /* fix sites without favicon */
 .tab-icon-stack { min-width: 21.5px };
 
