@@ -8,7 +8,7 @@
 	let tabstlbr = document.getElementById("tabbrowser-tabs");
         toolbar._customizationTarget.prepend(back);
         back.after(fwd);
-	toolbar._customizationTarget.after(ext);
+	toolbar._customizationTarget.appendChild(ext);
 	ext.after(menub);
     }
     if (gBrowserInit.delayedStartupFinished) init();
