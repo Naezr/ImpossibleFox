@@ -3,6 +3,11 @@
 
 
 
+/* small window width mode */
+@media (max-width: 800px) {
+  #tabbrowser-arrowscrollbox {visibility: collapse}
+  #alltabs-button {display: flex !important}
+}
 
 
 
@@ -15,7 +20,7 @@
 .tab-label-container[pinned], /* pinned tab label */
 #identity-box, /* icon of browser's own tabs like settings */
 #tracking-protection-icon-container /* security bullshit buttons */
-{ display: none !important }
+{ display: none }
 
 
 
@@ -50,6 +55,9 @@ scrollbox[part][orient="horizontal"] {
 /* tab close button on hover */
 tab:not([pinned]):hover .tab-close-button { display: flex !important }
 tab[selected]:not([pinned]) .tab-close-button { display: flex !important }
+
+/* cool tab background */
+.tab-background:not([selected]) {background:  #77777720 !important }
 
 /* urlbar in selected tab on hover style */
 .tab-label-container { opacity: 1 }
@@ -95,7 +103,7 @@ tab[selected]:hover {
 
 /* cool backround on bookmarks */
 #PlacesToolbarItems > .bookmark-item {
-  background: #77777730 !important;
+  background: #77777720 !important;
   height: 24px; 
 } 
 
@@ -114,7 +122,7 @@ scrollbox[orient="horizontal"]{
 
 
 
-/* SOME OTHER STUFF */
+/* ANOTHER IMPORTANT THINGS */
 
 /* swap toolbars positions */
 #titlebar { order: 0 !important; }
@@ -128,9 +136,6 @@ scrollbox[orient="horizontal"]{
 
 /* unlimited sidebar width */
 #sidebar-box { max-width: none !important }
-
-/* scripted buttons fix */
-#unified-extensions-button, #PanelUI-menu-button { margin-bottom: 4px !important }
 
 /* thin menubar */
 #toolbar-menubar {max-height: 5px !important }
