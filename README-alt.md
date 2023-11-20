@@ -20,7 +20,7 @@ English description may be a bit laggy, as all minor corrections and updates are
 
 # Features
 - ***One-line***  
-   Все элементы управления браузером находятся в одной строке, что позволяет сэкономить кучу вертикального пространства и отдать его под сайты.
+   All browser controls are in one line, which saves a bunch of vertical space and gives it to websites.
   
    ![изображение](https://github.com/Naezr/ImpossibleFox/assets/95460152/7edee538-caad-4d96-bf42-9f0f3b99a161)
 
