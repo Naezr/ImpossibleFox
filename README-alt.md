@@ -90,7 +90,8 @@ Warning! After editing any scripts you should clear the `startupCache` folder in
 For extra style, you can use extension [Adaptive Tab Bar Colour](https://addons.mozilla.org/ru/firefox/addon/adaptive-tab-bar-colour/)  
 To make it look clear, set the settings like this:
 
-![изображение](https://github.com/Naezr/ImpossibleFox/assets/95460152/88b230e0-1456-4bf4-b161-8eaf9c7505ca)
+![изображение](https://github.com/Naezr/ImpossibleFox/assets/95460152/360d0309-b46d-4081-a833-9a5db19ef5be)
+
 
 
 
