@@ -1,6 +1,6 @@
 # ImpossibleFox
 
-*If you don't understand what it says, use a translator. I will try to make a description in English as soon as possible.*
+**[ENGLISH README](https://github.com/Naezr/ImpossibleFox/blob/main/README-alt.md)**
 
 --------
 
