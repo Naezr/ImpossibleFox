@@ -91,7 +91,8 @@
 Для пущей стильности вы можете использовать расширение [Adaptive Tab Bar Colour](https://addons.mozilla.org/ru/firefox/addon/adaptive-tab-bar-colour/)
 Чтобы всё выглядело чётко поставьте такие настройки:
 
-![изображение](https://github.com/Naezr/ImpossibleFox/assets/95460152/88b230e0-1456-4bf4-b161-8eaf9c7505ca)
+![изображение](https://github.com/Naezr/ImpossibleFox/assets/95460152/fc4df401-6795-4440-9112-5018f3378389)
+
 
 
 
