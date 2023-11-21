@@ -1,84 +1,176 @@
 /* hype */
+@import "iconized_main_menu.css";
+
+
+
+
+
+
+
+
+
+
+/* variables */
+
+:root {
+  
+  --imf-tab-background: #77777720;
+  --imf-selected-tab-width: 315px;
+  --imf-tab-width: 210px;
+  
+  /* "center" or "initial" */
+  --imf-tabs-align: center;
+  --imf-bookmarks-align: center; 
+  
+  /* not for editing, very sensitive */
+  --imf-tab-height: 45px;
+  
+}
 
 
 
 
 /* small window width mode */
+
 @media (max-width: 800px) {
-  #tabbrowser-arrowscrollbox {visibility: collapse}
-  #alltabs-button {display: flex !important}
+  #tabbrowser-arrowscrollbox { visibility: collapse }
+  #alltabs-button { display: flex !important }
 }
 
 
 
 /* HIDE ELEMENTS */
+
+
 .tab-close-button, 
+
 #reader-mode-button, 
+
 #alltabs-button, 
-#page-action-buttons, /* add to bookmarks and PiP buttons in urlbar */
-#PlacesChevron, /* bookmarks overflow buttom */
-.tab-label-container[pinned], /* pinned tab label */
-#identity-box, /* icon of browser's own tabs like settings */
-#tracking-protection-icon-container /* security bullshit buttons */
+
+/* add to bookmarks and PiP buttons in urlbar */
+#page-action-buttons, 
+
+/* bookmarks overflow buttom */
+#PlacesChevron, 
+
+/* pinned tab label */
+.tab-label-container[pinned], 
+
+/* icon of browser's own tabs like settings */
+#identity-box, 
+
+/* security bullshit buttons */
+#tracking-protection-icon-container 
+
 { display: none }
+
+
+
+
+/* THAT THING IN THE LOWER LEFT CORNER WHEN YOU HOVER OVER THE LINK */
+
+#statuspanel #statuspanel-label {
+  font-weight: 600 !important;
+  padding-inline: 6px !important;
+  border-radius: 6px !important;
+  margin: 8px !important;
+  background-color: white !important;
+  color: black !important;
+}
 
 
 
 /* TABS */
 
+
 /* multiline tabs */
+
 scrollbox[part][orient="horizontal"] { 
   display: flex; 
   flex-wrap: wrap !important; 
   height: none !important; 
 }
 
+
+/* all types of tabs */
+
+.tabbrowser-tab {
+  max-height: var(--imf-tab-height);
+  min-width: var(--imf-tab-height);
+}
+
+
 /* inactive tab */
+
 .tabbrowser-tab[fadein]:not([selected]):not([pinned]) { 
-  max-width: 200px !important; 
-  min-width: 130px !important; 
+  max-width: var(--imf-tab-width) !important; 
+  min-width: var(--imf-tab-width) !important; 
 }
 
 /* active tab */
+
 .tabbrowser-tab[fadein][selected]:not([pinned]) { 
-  max-width: 310px !important; 
-  min-width: 310px !important; 
+  max-width: var(--imf-selected-tab-width) !important; 
+  min-width: var(--imf-selected-tab-width) !important; 
 }
+
 
 /* pinned tab */
+
 .tabbrowser-tab[fadein][pinned] { /* pinned tab */
-  max-width: 40px !important; 
-  min-width: 40px !important; 
-  #urlbar { z-index: -1 !important; opacity: 0 !important }
+  max-width: calc( var(--imf-tab-height) - 5px ) !important; 
+  min-width: calc( var(--imf-tab-height) - 5px ) !important; 
+  #urlbar { 
+    z-index: -1 !important; 
+    opacity: 0 !important 
+  }
 }
 
-/* tab close button on hover */
-tab:not([pinned]):hover .tab-close-button { display: flex !important }
-tab[selected]:not([pinned]) .tab-close-button { display: flex !important }
+
+/* display tab close button on hover and selected tab*/
+
+tab:not([pinned]):hover {
+  .tab-close-button { display: flex !important }
+}
+tab[selected]:not([pinned]) { 
+  .tab-close-button { display: flex !important }
+}
+
 
 /* cool tab background */
-.tab-background:not([selected]) {background:  #77777720 !important }
+
+.tab-background:not([selected]) {background:  var(--imf-tab-background) !important }
+
 
 /* urlbar in selected tab on hover style */
+
 .tab-label-container { opacity: 1 }
 #urlbar { opacity: 0; }
 #urlbar-background{ opacity: 0; outline: none !important }
+
+
+/* show urlbar and hide tab label on hover */
 
 tab[selected]:hover { 
   #urlbar {opacity: 1}; 
   .tab-label-container{ opacity: 0 !important; }; 
 }
 
+
+/* show urlbar with background if it focused */
+
 #urlbar[focused] { 
   opacity: 1; 
   #urlbar-background{ opacity: 1 };
-  .tab-close-button{ display: flex };
 }
 
+
+/* cut urlbar on sides */
+
 #urlbar { 
-  min-height: 35px !important; 
-  max-width: 281px; 
-  padding-left: 29px !important; 
+  max-width: calc(var(--imf-selected-tab-width) - 26px); 
+  padding-left: 30px !important; 
   clip: rect( auto, auto, auto, 28px ); 
 }
 
@@ -86,7 +178,9 @@ tab[selected]:hover {
 
 /* BOOKMARKS */
 
+
 /* multiline bookmarks */
+
 :root[BookmarksToolbarOverlapsBrowser] :where(#PersonalToolbar) {
   height: unset !important;
 }
@@ -101,46 +195,62 @@ tab[selected]:hover {
   padding: 0 6px;
 }
 
+
 /* cool backround on bookmarks */
+
 #PlacesToolbarItems > .bookmark-item {
-  background: #77777720 !important;
+  background: var(--imf-tab-background) !important;
   height: 24px; 
 } 
 
 
 
 /* CENTERED TABS AND BOOKMARKS */
+
 #tabbrowser-arrowscrollbox:not([overflowing]){
- --uc-flex-justify: center; 
+ --imf-align-tmp: var(--imf-tabs-align); 
 }
+
 #PlacesToolbarItems:not([overflowing]){
- --uc-flex-justify: center; 
+ --imf-align-tmp: var(--imf-bookmarks-align); 
 }
+
 scrollbox[orient="horizontal"]{
-  justify-content: var(--uc-flex-justify,initial);
+  justify-content: var(--imf-align-tmp,initial);
 }
 
 
 
 /* ANOTHER IMPORTANT THINGS */
 
+
+/* hide empty adressbar */
+
+:root[sessionrestored]:not([inFullscreen]) > body > 
+  #browser{ margin-top: calc( 0px - var(--imf-tab-height)) }
+  #nav-bar {z-index: -1 !important }
+
+
 /* swap toolbars positions */
+
 #titlebar { order: 0 !important; }
 #nav-bar { order: 3 !important; border-top-width: 0px !important; }
 #PersonalToolbar { order: 2 !important; }
 #TabsToolbar { order: 1 !important; }
 
-/* hide empty adressbar */
-:root[sessionrestored]:not([inFullscreen]) > body > #browser{ margin-top: -44px }
-#nav-bar {z-index: -1 !important }
 
 /* unlimited sidebar width */
+
 #sidebar-box { max-width: none !important }
 
+
 /* thin menubar */
+
 #toolbar-menubar {max-height: 5px !important }
 
+
 /* small scrollbars in ui */
+
 .panel-subview-body,
 #permList,
 scrollbar{
@@ -149,72 +259,23 @@ scrollbar{
  scrollbar-width: thin 
 }
 
-/* fix very long buttons */
-.titlebar-buttonbox-container {max-height: 45px}
-.toolbarbutton-1 {max-height: 45px}
-.titlebar-spacer {max-width: 0px}
 
-/* fix urlbar height */
-#nav-bar {min-height: 44px !important; max-height: 44px !important}
+/* fix very long buttons and remove empty space */
+
+.titlebar-buttonbox-container { max-height: var(--imf-tab-height) }
+.toolbarbutton-1 { max-height: var(--imf-tab-height) }
+.titlebar-spacer { max-width: 0px }
+
+
+/* urlbar height */
+
+#nav-bar {
+  min-height: calc(var(--imf-tab-height) - 3px)!important;
+  max-height: calc(var(--imf-tab-height) - 3px)!important;
+}
+
 
 /* fix sites without favicon */
-.tab-icon-stack { min-width: 21.5px };
 
+.tab-icon-stack { min-width: 22px };
 
-
-/* THAT THING IN THE LOWER LEFT CORNER WHEN YOU HOVER OVER THE LINK */
-#statuspanel #statuspanel-label {
-  font-weight: 600 !important;
-  padding-inline: 6px !important;
-  border-radius: 6px !important;
-  margin: 8px !important;
-  background-color: white !important;
-  color: black !important;
-}
-
-
-
-/* ICONIZED MENU */
-#appMenu-zoom-controls::before,
-#appMenu-fxa-status2[fxastatus] > toolbarbutton::before,
-#appMenu-protonMainView > .panel-subview-body > toolbarbutton > image{
-  fill: currentColor;
-  -moz-context-properties: fill;
-  margin-inline: 0 8px !important;
-}
-#appMenu-zoom-controls::before,
-#appMenu-fxa-status2[fxastatus] > toolbarbutton::before{
-  display: flex;
-  content: "";
-  width: 16px;
-  height: 16px;
-}
-#appMenu-new-tab-button2{ list-style-image: url("chrome://browser/skin/new-tab.svg") }
-#appMenu-new-window-button2{ list-style-image: url("chrome://browser/skin/window.svg") }
-#appMenu-new-private-window-button2{ list-style-image: url("chrome://browser/skin/privateBrowsing.svg") }
-#appMenu-bookmarks-button{ list-style-image: url("chrome://browser/skin/bookmark-star-on-tray.svg") }
-#appMenu-history-button{ list-style-image: url("chrome://browser/skin/history.svg") }
-#appMenu-downloads-button{ list-style-image: url("chrome://browser/skin/downloads/downloads.svg") }
-#appMenu-passwords-button{ list-style-image: url("chrome://browser/skin/login.svg") }
-#appMenu-extensions-themes-button{ list-style-image: url("chrome://mozapps/skin/extensions/extension.svg") }
-#appMenu-print-button2{ list-style-image: url("chrome://global/skin/icons/print.svg") }
-#appMenu-save-file-button2{ list-style-image: url("chrome://browser/skin/save.svg") }
-#appMenu-find-button2{ list-style-image: url("chrome://global/skin/icons/search-glass.svg") }
-#appMenu-settings-button{ list-style-image: url("chrome://global/skin/icons/settings.svg") }
-#appMenu-more-button2{ list-style-image: url("chrome://global/skin/icons/developer.svg") }
-#appMenu-help-button2{ list-style-image: url("chrome://global/skin/icons/info.svg") }
-#appMenu-quit-button2{ list-style-image: url("chrome://devtools/skin/images/search-clear.svg") }
-#appMenu-translate-button{ list-style-image: url("chrome://browser/skin/translations.svg") }
-#appMenu-zoom-controls::before{ background-image: url("chrome://browser/skin/fullscreen.svg") }
-/* Use account-button icon for signed in sync item */
-#appMenu-fxa-status2[fxastatus] > toolbarbutton::before{ background-image: var(--avatar-image-url) }
-/* Add somewhat hacky separator to zoom controls so it looks consistent */
-#appMenu-protonMainView > .panel-subview-body::after{
-  content: "";
-  display: flex;
-  border-bottom: 1px solid var(--panel-separator-color);
-  margin: var(--panel-separator-margin);
-}
-#appMenu-find-button2 ~ *{
-  order: 2;
-}
