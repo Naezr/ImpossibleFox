@@ -62,7 +62,7 @@ After that, go to the page `about:config` in your browser and change the followi
 
 Remember to click the check mark when changing the numeric value and restart your browser.
 
-Next, [download](https://github.com/Naezr/ImpossibleFox/releases) the latest version of *ImpossibleFox* and copy the files from the archive to your profile folder.
+Next, [download](https://github.com/Naezr/ImpossibleFox/releases) the latest version of *ImpossibleFox* and copy the files from the archive to `chrome` folder in your profile folder.
 
 You can then customize the layout of the buttons, for example like this:
 
