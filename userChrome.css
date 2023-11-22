@@ -3,13 +3,6 @@
 
 
 
-
-
-
-
-
-
-
 /* variables */
 
 :root {
@@ -17,6 +10,7 @@
   --imf-tab-background: #77777720;
   --imf-selected-tab-width: 315px;
   --imf-tab-width: 210px;
+  --imf-tab-text-size: 12px;
   
   /* "center" or "initial" */
   --imf-tabs-align: center;
@@ -30,23 +24,20 @@
 
 
 
-/* small window width mode */
 
-@media (max-width: 800px) {
-  #tabbrowser-arrowscrollbox { visibility: collapse }
-  #alltabs-button { display: flex !important }
-}
 
 
 
 /* HIDE ELEMENTS */
-
 
 .tab-close-button, 
 
 #reader-mode-button, 
 
 #alltabs-button, 
+
+/* descriptions in extensions menu */
+.unified-extensions-item-message-deck,
 
 /* add to bookmarks and PiP buttons in urlbar */
 #page-action-buttons, 
@@ -63,8 +54,42 @@
 /* security bullshit buttons */
 #tracking-protection-icon-container 
 
-{ display: none }
+{ display: none !important }
 
+
+/* hide empty navbar */
+
+:root[sessionrestored]:not([inFullscreen]) > body > 
+  #browser{ margin-top: calc( 0px - var(--imf-tab-height)) }
+  #nav-bar {z-index: -1 !important }
+
+
+/* hide empty space in titlebar */
+.titlebar-spacer { max-width: 0px }
+
+
+
+/* small window width mode */
+
+@media (max-width: 800px) {
+  #tabbrowser-arrowscrollbox { visibility: collapse }
+  #alltabs-button { display: flex !important }
+}
+
+
+
+/* FINDBAR */ 
+
+findbar {
+  padding: 0 !important;
+  margin: 0 8px !important;
+  border-radius: var(6px) !important;
+  order: -1;
+}
+
+.findbar-textbox { 
+  min-width:  400px !important; 
+}
 
 
 
@@ -138,16 +163,31 @@ tab[selected]:not([pinned]) {
 }
 
 
+/* sync tab label and urlbar font */
+.tab-label { 
+  font-size: var(--imf-tab-text-size) !important; 
+}
+#urlbar-input { 
+  font-size: var(--imf-tab-text-size) !important; 
+  padding-top: 2px !important;
+}
+
+
 /* cool tab background */
 
-.tab-background:not([selected]) {background:  var(--imf-tab-background) !important }
+.tab-background:not([selected]) { 
+  background:  var(--imf-tab-background) !important; 
+}
 
 
-/* urlbar in selected tab on hover style */
+/* setup for urlbar on hover and remove outline */
 
 .tab-label-container { opacity: 1 }
 #urlbar { opacity: 0; }
-#urlbar-background{ opacity: 0; outline: none !important }
+#urlbar-background{ 
+  outline: none !important;
+  opacity: 0; 
+}
 
 
 /* show urlbar and hide tab label on hover */
@@ -166,11 +206,11 @@ tab[selected]:hover {
 }
 
 
-/* cut urlbar on sides */
+/* cut urlbar on sides to show icon and close button */
 
 #urlbar { 
   max-width: calc(var(--imf-selected-tab-width) - 26px); 
-  padding-left: 30px !important; 
+  padding-left: 28px !important; 
   clip: rect( auto, auto, auto, 28px ); 
 }
 
@@ -224,13 +264,6 @@ scrollbox[orient="horizontal"]{
 /* ANOTHER IMPORTANT THINGS */
 
 
-/* hide empty adressbar */
-
-:root[sessionrestored]:not([inFullscreen]) > body > 
-  #browser{ margin-top: calc( 0px - var(--imf-tab-height)) }
-  #nav-bar {z-index: -1 !important }
-
-
 /* swap toolbars positions */
 
 #titlebar { order: 0 !important; }
@@ -260,11 +293,10 @@ scrollbar{
 }
 
 
-/* fix very long buttons and remove empty space */
+/* fix very long buttons */
 
 .titlebar-buttonbox-container { max-height: var(--imf-tab-height) }
 .toolbarbutton-1 { max-height: var(--imf-tab-height) }
-.titlebar-spacer { max-width: 0px }
 
 
 /* urlbar height */
