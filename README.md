@@ -106,7 +106,7 @@ To make it look clear, set the settings like this:
 
 
 
-# Благодарность
+# Thanks
  - [MrOtherGuy](https://github.com/MrOtherGuy)   Thanks for the fx-autoconfig and the repository with cool css's.  
  - [Firefox-Alpha](https://github.com/Tagggar/Firefox-Alpha)   This project inspired me to create this topic. There the address bar is also built into the tab, but it is less convenient.  
  - [Reddit guy](https://www.reddit.com/r/FirefoxCSS/comments/nv1lb6/url_on_the_tab_like_the_new_safari/)   Without his javascript code, nothing would work.  
