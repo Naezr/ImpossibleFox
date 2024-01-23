@@ -3,7 +3,7 @@
 
 --------
 
-
+**Maybe try lite version: [https://github.com/Naezr/ImpossibleFoxLite](ImpossibleFoxLite)**
 
 **A simple and fast one-line theme in vanilla Firefox style, as close as possible to the so-called "compact mode" of the Safari browser**
 
