@@ -1,6 +1,5 @@
 # ImpossibleFox
 
-English description may be a bit laggy, as all minor corrections and updates are made to the Russian version first.
 
 --------
 
