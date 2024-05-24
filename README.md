@@ -1,5 +1,8 @@
 # ImpossibleFox
 
+>[!WARNING]
+> This repository is abandoned, I don't intend to work on this theme anytime soon
+>
 
 --------
 
